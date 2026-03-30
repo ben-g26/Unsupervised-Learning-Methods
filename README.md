@@ -200,26 +200,30 @@ The Optical (Sentinel-2) and Altimetry (Sentinel-3) data were accessed using the
 Before completing the notebook, ensure Sentinel-2 and Sentinel-3 data are extracted and colocated following the steps provided here: Colocating Sentinel Data
 .
 
-Names of the Sentinel 2 and Sentinel-3 data folders used within this project:
+* Sentinel-2 (MSI) data : S2A_MSIL1C_20190301T235611_N0207_R116_T01WCU_20190302T014622.SAFE
 
-Sentinel-2 (MSI) data : S2A_MSIL1C_20190301T235611_N0207_R116_T01WCU_20190302T014622.SAFE
-Sentinel-3 (SRAL) data : S3B_SR_2_LAN_SI_20190301T231304_20190301T233006_20230405T162425_1021_022_301______LN3_R_NT_005.SEN3
-<p align="right">(<a href="#readme-top">back to top</a>)</p> <!-- CONTACT -->
-Contact
+* Sentinel-3 (SRAL) data : S3B_SR_2_LAN_SI_20190301T231304_20190301T233006_20230405T162425_1021_022_301______LN3_R_NT_005.SEN3
 
-Benjamin Guillaud-Leblanc - LinkedIn
- - ben.guillaud-leblanc.22@ucl.ac.uk
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Project Link: https://github.com/ben-g26/Unsupervised-Learning-Methods
+<!-- CONTACT -->
+# Contact
+Benjamin Guillaud-Leblanc - [LinkedIn](https://www.linkedin.com/in/benjamin-guillaud-leblanc-b168b723a/) - ben.guillaud-leblanc.22@ucl.ac.uk
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p> <!-- ACKNOWLEDGMENTS -->
-Acknowledgments
-This project forms the Week 4 assignment for GEOL0069 Artificial Intelligence for Earth Observation (2025/26) at University College London.
-Thank you to Prof. Michel Tsamados
- and Weibin Chen
- for providing the original Jupyter Notebook and guidance.
-Thank you to ESA/Copernicus
- for access to Sentinel-2 and Sentinel-3 datasets.
-Thank you to AWI (Alfred Wegner Institute)
- for the radar re-tracking methodology.
-<p align="right">(<a href="#readme-top">back to top</a>)</p> ```
+Project Link: [https://github.com/ben-g26/Unsupervised-Learning-Methods](https://github.com/ben-g26/Unsupervised-Learning-Methods)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- ACKNOWLEDGMENTS -->
+# Acknowledgments
+
+* This project makes up my Week 4 assignment for GEOL0069 Artificial Intelligence for Earth Observation (25/26) at University College London.
+* Thank you to [Prof. Michel Tsamados](https://profiles.ucl.ac.uk/11855-michel-tsamados) and [Weibin Chen](https://www.ucl.ac.uk/mathematical-physical-sciences/weibin-chen) for producing the initial Jupyter Notebook for this project and their guidance in AI for Earth Observation.
+* Thank you to [ESA/Copernicus](https://cds.climate.copernicus.eu/) for the availability of Sentinel-2 and Sentinel-3 data.
+* Thank you to [AWI (Alfred Wegner Institute)](https://www.awi.de/en/) for the methodology regarding radar re-tracking.
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
