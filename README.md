@@ -3,7 +3,8 @@
 <!-- PROJECT LOGO --> 
 <br /> 
 <div align="center"> 
- <a href="https://github.com/ben-g26/Unsupervised-Learning-Methods"> <img src="Logo.png" alt="Logo" width="558" height="435"> 
+ <a href="https://github.com/ben-g26/Unsupervised-Learning-Methods"> 
+  <img src="Logo.png" alt="Logo" width="558" height="435"> 
  </a> 
 <h3 align="center">Unsupervised Classification of Sea Ice and Leads</h3> 
  <p align="center"> 
