@@ -4,7 +4,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/ben-g26/Unsupervised-Learning-Methods">
-    <img src="logo.png" alt="Logo" width="558" height="435">
+    <img src="Logo.png" alt="Logo" width="558" height="435">
   </a>
 
 <h3 align="center">Sea Ice and Lead Unsupervised Classification</h3>
