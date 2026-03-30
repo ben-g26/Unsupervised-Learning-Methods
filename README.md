@@ -10,7 +10,7 @@
 <h3 align="center">Unsupervised Classification of Sea Ice and Leads</h3>
 
   <p align="center">
-  <strong>GEOL0069 (AI4EO) - Week 4 | UCL Earth Sciences</strong>
+  <strong>AI for Earth Observation (GEOL0069) - Week 4 | UCL Earth Sciences</strong>
     <br />
   Distinguishing sea ice from leads using K-Means, GMM, and AWI-style radar alignment
   <br/>
