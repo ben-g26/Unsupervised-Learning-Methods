@@ -7,7 +7,7 @@
     <img src="Logo.png" alt="Logo" width="558" height="435">
   </a>
 
-<h3 align="center">Sea Ice and Lead Unsupervised Classification</h3>
+<h3 align="center">Unsupervised Classification of Sea Ice and Leads</h3>
 
   <p align="center">
   <strong>GEOL0069 (AI4EO) - Week 4 | UCL Earth Sciences</strong>
