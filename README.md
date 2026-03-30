@@ -5,8 +5,42 @@
 <div align="center"> 
  <a href="https://github.com/ben-g26/Unsupervised-Learning-Methods"> <img src="Logo.png" alt="Logo" width="558" height="435"> 
  </a> 
- <h3 align="center">Unsupervised Classification of Sea Ice and Leads</h3> 
- <p align="center"> <strong>AI for Earth Observation (GEOL0069) - Week 4 | UCL Earth Sciences</strong> <br /> Sea ice vs lead classification using K-Means, GMM, and AWI-based radar alignment <br/> <a href="https://github.com/eemeleems/GEOL0069_W4_unsupervised"><strong>Explore the docs »</strong></a> <br /> <br /> </p> </div> <!-- TABLE OF CONTENTS --> <details> <summary>Table of Contents</summary> <ol> <li> <a href="#project-summary">Project Summary</a> <ul> <li><a href="#sentinel-2-and-sentinel-3-data">Sentinel-2 & Sentinel-3 Data</a></li> <li><a href="#unsupervised-learning-models">Unsupervised Learning Models</a></li> <li><a href="#k-means-clustering">K-Means Clustering</a></li> <li><a href="#gaussian-mixture-models">Gaussian Mixture Models (GMM)</a></li> <li><a href="#avi-alignment">AVI Alignment</a></li> </ul> </li> <li> <a href="#getting-started">Getting Started</a> <ul> <li><a href="#prerequisites-installation">Prerequisites & Installation</a></li> </ul> </li> <li><a href="#contact">Contact</a></li> <li><a href="#acknowledgments">Acknowledgments</a></li> </ol> </details> <!-- ABOUT THE PROJECT -->
+<h3 align="center">Unsupervised Classification of Sea Ice and Leads</h3> 
+ <p align="center"> 
+ <strong>AI for Earth Observation (GEOL0069) - Week 4 | UCL Earth Sciences</strong> 
+  <br /> 
+ Sea ice vs lead classification using K-Means, GMM, and AWI-based radar alignment 
+ <br/> 
+  <a href="https://github.com/eemeleems/GEOL0069_W4_unsupervised"><strong>Explore the docs »</strong></a> 
+  <br /> 
+  <br /> 
+ </p> 
+</div> 
+<!-- TABLE OF CONTENTS --> 
+<details> 
+ <summary>Table of Contents</summary> 
+ <ol> 
+  <li> 
+   <a href="#project-summary">Project Summary</a> 
+   <ul> 
+    <li><a href="#sentinel-2-and-sentinel-3-data">Sentinel-2 & Sentinel-3 Data</a></li> 
+    <li><a href="#unsupervised-learning-models">Unsupervised Learning Models</a></li> 
+    <li><a href="#k-means-clustering">K-Means Clustering</a></li> 
+    <li><a href="#gaussian-mixture-models">Gaussian Mixture Models (GMM)</a></li> 
+    <li><a href="#avi-alignment">AVI Alignment</a></li> 
+   </ul> 
+  </li> 
+  <li> 
+   <a href="#getting-started">Getting Started</a> 
+   <ul> 
+    <li><a href="#prerequisites-installation">Prerequisites & Installation</a></li> 
+   </ul> 
+  </li> 
+  <li><a href="#contact">Contact</a></li> 
+  <li><a href="#acknowledgments">Acknowledgments</a></li> 
+ </ol> 
+</details> 
+<!-- ABOUT THE PROJECT -->
 Project Summary
 
 Monitoring sea ice and leads in polar regions is essential for understanding ocean–atmosphere heat exchange and ensuring safe navigation. This project applies unsupervised machine learning to classify these features from satellite imagery.
