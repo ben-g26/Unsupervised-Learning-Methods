@@ -14,7 +14,7 @@
     <br />
   Differentiating sea ice and leads using K-Means, GMM, and AWI-based radar alignment
   <br/>
-    <a href="https://github.com/eemeleems/GEOL0069_W4_unsupervised"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/ben-g26/Unsupervised-Learning-Methods"><strong>Explore the docs »</strong></a>
     <br />
     <br />
  
