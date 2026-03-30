@@ -219,10 +219,10 @@ Project Link: [https://github.com/ben-g26/Unsupervised-Learning-Methods](https:/
 <!-- ACKNOWLEDGMENTS -->
 # Acknowledgments
 
-* This project makes up my Week 4 assignment for GEOL0069 Artificial Intelligence for Earth Observation (25/26) at University College London.
-* Thank you to [Prof. Michel Tsamados](https://profiles.ucl.ac.uk/11855-michel-tsamados) and [Weibin Chen](https://www.ucl.ac.uk/mathematical-physical-sciences/weibin-chen) for producing the initial Jupyter Notebook for this project and their guidance in AI for Earth Observation.
-* Thank you to [ESA/Copernicus](https://cds.climate.copernicus.eu/) for the availability of Sentinel-2 and Sentinel-3 data.
-* Thank you to [AWI (Alfred Wegner Institute)](https://www.awi.de/en/) for the methodology regarding radar re-tracking.
+* Thank you to [Prof. Michel Tsamados](https://profiles.ucl.ac.uk/11855-michel-tsamados) and [Weibin Chen](https://www.ucl.ac.uk/mathematical-physical-sciences/weibin-chen) for creating the Jupyter Notebook for this project and for their guidance in AI for Earth Observation.
+* Thank you to [ESA/Copernicus](https://cds.climate.copernicus.eu/) for producing and sharing Sentinel-2 and Sentinel-3 data.
+* Thank you to [AWI (Alfred Wegner Institute)](https://www.awi.de/en/) for the radar re-tracking methodology.
+* This project is my Week 4 assignment for GEOL0069 Artificial Intelligence for Earth Observation at University College London.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
