@@ -1,192 +1,5 @@
 <a id="readme-top"></a>
 
-<!-- PROJECT LOGO --> 
-<br /> 
-<div align="center"> 
- <a href="https://github.com/ben-g26/Unsupervised-Learning-Methods"> 
-  <img src="Logo.png" alt="Logo" width="558" height="435"> 
- </a> 
-<h3 align="center">Unsupervised Classification of Sea Ice and Leads</h3> 
- <p align="center"> 
- <strong>AI for Earth Observation (GEOL0069) - Week 4 | UCL Earth Sciences</strong> 
-  <br /> 
- Sea ice vs lead classification using K-Means, GMM, and AWI-based radar alignment 
- <br/> 
-  <a href="https://github.com/eemeleems/GEOL0069_W4_unsupervised"><strong>Explore the docs »</strong></a> 
-  <br /> 
-  <br /> 
- </p> 
-</div> 
-<!-- TABLE OF CONTENTS --> 
-<details> 
- <summary>Table of Contents</summary> 
- <ol> 
-  <li> 
-   <a href="#project-summary">Project Summary</a> 
-   <ul> 
-    <li><a href="#sentinel-2-and-sentinel-3-data">Sentinel-2 & Sentinel-3 Data</a></li> 
-    <li><a href="#unsupervised-learning-models">Unsupervised Learning Models</a></li> 
-    <li><a href="#k-means-clustering">K-Means Clustering</a></li> 
-    <li><a href="#gaussian-mixture-models">Gaussian Mixture Models (GMM)</a></li> 
-    <li><a href="#avi-alignment">AVI Alignment</a></li> 
-   </ul> 
-  </li> 
-  <li> 
-   <a href="#getting-started">Getting Started</a> 
-   <ul> 
-    <li><a href="#prerequisites-installation">Prerequisites & Installation</a></li> 
-   </ul> 
-  </li> 
-  <li><a href="#contact">Contact</a></li> 
-  <li><a href="#acknowledgments">Acknowledgments</a></li> 
- </ol> 
-</details> 
-<!-- ABOUT THE PROJECT -->
-### Project Summary
-
-Monitoring sea ice and leads in polar regions is essential for understanding ocean–atmosphere heat exchange and ensuring safe navigation. This project applies unsupervised machine learning to classify these features from satellite imagery.
-
-Two clustering approaches are implemented using Sentinel-2 optical (MSI) and Sentinel-3 altimetry (SRAL) data. Model outputs are evaluated against European Space Agency (ESA) reference data.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-Sentinel-2 and Sentinel-3 Data
-
-Sentinel-2 and Sentinel-3 are part of the ESA Copernicus programme. This project combines optical imagery with radar altimetry to improve classification robustness, particularly under conditions where optical data is limited (e.g., cloud cover).
-
-Read more about the missions here: Sentinel-2
- & Sentinel-3
-
-Further instrument details: Sentinel-2 MSI
- & Sentinel-3 Altimetry Data Guide
-.
-
-<br/>
-## Unsupervised Learning Models
-
-Unsupervised learning identifies structure in unlabeled datasets by grouping similar observations and extracting latent patterns. It is particularly suited to large, high-dimensional datasets.
-
-This project focuses on:
-
-K-Means Clustering (hard clustering)
-Gaussian Mixture Models (GMM) (probabilistic clustering)
-<br/>
-# K-Means Clustering
-
-K-means partitions data into k clusters by minimising within-cluster variance (inertia). Cluster centroids are iteratively updated until convergence.
-
-<br/>
-
-Key characteristics:
-
-Requires pre-defined number of clusters (k)
-Uses Euclidean distance for assignment
-Iterative optimisation (assignment → update)
-<br/>
-
-Advantages:
-
-Computationally efficient
-Easy to interpret and implement
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-# Gaussian Mixture Models (GMM)
-
-GMMs model data as a weighted combination of Gaussian distributions, enabling probabilistic (soft) clustering. Each component is defined by its mean and covariance.
-
-<br/>
-
-Key characteristics:
-
-Provides cluster membership probabilities
-Supports flexible cluster shapes via covariance structure
-Fitted using the Expectation-Maximization (EM) algorithm
-<br/>
-
-EM workflow:
-
-E-step: Estimate cluster membership probabilities
-M-step: Update model parameters to maximise likelihood
-<br/>
-
-Advantages:
-
-Captures uncertainty in assignments
-Handles non-spherical cluster distributions
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-AWI Alignment
-
-Radar altimetry signals are sensitive to orbital errors and Mean Sea Surface (MSS) variability. To improve feature extraction, sub-pixel waveform alignment based on the Alfred Wegener Institute (AWI) method is applied.
-
-FFT (Fast Fourier Transform) oversampling is used to align waveforms to a common reference, reducing noise in Peakiness and SSD metrics and improving cluster separability.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p> 
-<!-- GETTING STARTED -->
-Getting Started
-
-The project is designed for execution in Google Colab, which provides the computational resources required for large NetCDF and raster datasets, along with seamless Google Drive integration.
-
-Local execution is also supported; however, file paths must be adapted accordingly to access Copernicus Sentinel data. The notebook can be launched via the Colab link in the repository’s .ipynb file.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-Prerequisites & Installation
-
-Installation commands are included in the notebook.
-
-Required Packages:
-
-!pip install rasterio
-!pip install netCDF4
-<br/>
-
-Python & Machine Learning Libraries:
-
-import rasterio
-import numpy as np
-import matplotlib.pyplot as plt
-from netCDF4 import Dataset
-from scipy.interpolate import interp1d
-from scipy.optimize import curve_fit
-
-from sklearn.cluster import KMeans
-from sklearn.mixture import GaussianMixture
-from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay, classification_report
-from numpy import asarray as ar, exp
-<br/>
-
-Sentinel-2 and Sentinel-3 datasets were obtained via the Copernicus Data Store
-. Access requires account authentication within your workflow.
-
-Before running the notebook, ensure datasets are extracted and colocated as described here: Colocating Sentinel Data
-.
-
-Dataset folder names:
-
-Sentinel-2 (MSI) data : S2A_MSIL1C_20190301T235611_N0207_R116_T01WCU_20190302T014622.SAFE
-Sentinel-3 (SRAL) data : S3B_SR_2_LAN_SI_20190301T231304_20190301T233006_20230405T162425_1021_022_301______LN3_R_NT_005.SEN3
-<p align="right">(<a href="#readme-top">back to top</a>)</p> <!-- CONTACT -->
-Contact
-
-Benjamin Guillaud-Leblanc - LinkedIn
- - ben.guillaud-leblanc.22@ucl.ac.uk
-
-Project Link: https://github.com/ben-g26/Unsupervised-Learning-Methods
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p> <!-- ACKNOWLEDGMENTS -->
-Acknowledgments
-Week 4 assignment for GEOL0069 Artificial Intelligence for Earth Observation (2025/26), University College London.
-Prof. Michel Tsamados
- and Weibin Chen
- for the original notebook and instruction.
-ESA/Copernicus
- for Sentinel data access.
-AWI (Alfred Wegner Institute)
- for radar re-tracking methodology.
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<a id="readme-top"></a>
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -199,7 +12,7 @@ AWI (Alfred Wegner Institute)
   <p align="center">
   <strong>AI for Earth Observation (GEOL0069) - Week 4 | UCL Earth Sciences</strong>
     <br />
-  Distinguishing sea ice from leads using K-Means, GMM, and AWI-style radar alignment
+  Differentiating sea ice and leads using K-Means, GMM, and AWI-based radar alignment
   <br/>
     <a href="https://github.com/eemeleems/GEOL0069_W4_unsupervised"><strong>Explore the docs »</strong></a>
     <br />
@@ -239,15 +52,15 @@ AWI (Alfred Wegner Institute)
 <!-- ABOUT THE PROJECT -->
 # Project Summary
 
-As polar regions experience rapid climate shifts, it is important to monitor the distribution of sea ice (frozen sea water floating on the ocean surface) and leads (linear fractures in the sea ice), to understand ocean-atmosphere heat exchange and safe ship navigation. Image processing is crucial to appropriately classify these two features, and this can be done using unsupervised machine learning.
+As polar environments undergo rapid climatic change, monitoring the spatial distribution of sea ice (floating frozen seawater) and leads (linear openings within the ice) is critical for understanding ocean–atmosphere heat exchange and ensuring safe navigation. Image processing techniques are essential for distinguishing these features, and unsupervised machine learning provides an effective solution.
 
-This project covers two unsupervised machine learning algorithms to differentiate sea ice and leads in satellite images. We use Sentinel-2 optical (MSI) and Sentinel-3 altimetry (SRAL) data to classify them, and compare this with ground truth data from the European Space Agency (ESA). 
+This project explores two unsupervised machine learning approaches to classify sea ice and leads from satellite imagery. Sentinel-2 optical (MSI) and Sentinel-3 altimetry (SRAL) datasets are used, with results compared against European Space Agency (ESA) reference data.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Sentinel-2 and Sentinel-3 Data
 
-Sentinel-2 and Sentinel-3 are both observation missions from the European Space Agency (ESA) Copernicus Programme. We use both optical data and radar altimetry data as a multi-sensor approach to extend classification capabilities and improve reliability, such as where optical data experiences cloud cover.
+Sentinel-2 and Sentinel-3 are Earth observation missions developed under the European Space Agency (ESA) Copernicus Programme. This project combines optical imagery with radar altimetry data, enabling a multi-sensor approach that enhances classification performance, particularly in conditions where optical data is limited (e.g., cloud cover).
 
 Read more about the missions here: [Sentinel-2](https://dataspace.copernicus.eu/data-collections/copernicus-sentinel-missions/sentinel-2) & [Sentinel-3](https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-3)
 
@@ -258,13 +71,13 @@ You can also read more about the relevant instruments from the missions here: [S
 
 ## Unsupervised Learning Models
 
-Unsupervised learning is a type of artificial intelligence in which models work without pre-defined labels (dataset is not classified under human supervision). Unlike supervised learning, unsupervised learning models are given unlabelled data and find patterns by grouping similar data points and finding hidden structures. 
+Unsupervised learning refers to machine learning techniques that operate without labelled data. Instead of relying on predefined classes, these models identify patterns by grouping similar observations and revealing underlying structure within the dataset.
 
-These algorithms are most appropriate for complex tasks like organising large datasets into clusters. There are a number of different clustering types, including exclusive ('hard'), overlapping ('soft'), hierarchical, and probabilistic.
+These approaches are particularly well suited to large and complex datasets. Clustering methods can be categorised into several types, including exclusive ("hard"), overlapping ("soft"), hierarchical, and probabilistic clustering.
 
 <br/>
 
-**There are many unsupervised learning algorithms, and today we are looking at two of them:**
+**There are many unsupervised learning algorithms, and in this project we focus on two:**
 
 * K-Means Clustering (Exclusive Clustering)
 * Gaussian Mixture Models (GMM) (Probabilistic Clustering)
@@ -272,100 +85,99 @@ These algorithms are most appropriate for complex tasks like organising large da
 <br/>
 
 ### K-Means Clustering
-K-means clustering is a centroid-based algorithm that splits the data into k clusters (or groups) by minimising the within-cluster sum of squares (inertia), where k represents the number of groups pre-specified by the analyst. The algorithm defines k centroids, one for each cluster, and then each data point is assigned to the nearest centroid, whilst keeping the centroids as small as possible.
+K-means clustering is a centroid-based method that partitions data into *k* clusters by minimising within-cluster variance (inertia). The value of *k* is specified in advance. The algorithm assigns each data point to the nearest centroid while iteratively updating centroid positions to reduce cluster spread.
 
 <br/>
 
 **K-means clustering is particularly well-suited for applications where:**
 
-* The structure of the data is not known beforehand: K-means doesn’t require any prior knowledge about the data distribution or structure, making it ideal for exploratory data analysis.
-* Simplicity and scalability: The algorithm is straightforward to implement and can scale to large datasets relatively easily.
+* The underlying data structure is unknown: No prior assumptions about distribution are required, making it useful for exploratory analysis.
+* Simplicity and scalability are important: The algorithm is easy to implement and performs efficiently on large datasets.
 
 <br/>
 
 **Components of K-Means:**
 
-* Choosing K: The number of clusters (k) is a parameter that needs to be specified before applying the algorithm.
-* Centroids Initialisation: The initial placement of the centroids can affect the final results.
-* Assignment Step: Each data point is assigned to its nearest centroid, based on the squared Euclidean distance.
-* Update Step: The centroids are recomputed as the center of all the data points assigned to the respective cluster.
+* Choosing K: The number of clusters (*k*) must be defined before running the algorithm.
+* Centroid Initialisation: The starting positions of centroids can influence the final clustering outcome.
+* Assignment Step: Each data point is assigned to the nearest centroid using squared Euclidean distance.
+* Update Step: Centroids are recalculated as the mean of all assigned points.
 
-The assignment and update steps are repeated iteratively until the centroids no longer move significantly, meaning the within-cluster variation is minimised. This iterative process ensures that the algorithm converges to a result, which might be a local optimum.
+The assignment and update steps are repeated until centroid movement becomes negligible, indicating convergence (often to a local optimum).
 
 <br/>
 
 **Advantages of K-Means:**
 
-* Efficiency: K-means is computationally efficient.
-* Ease of interpretation: The results of k-means clustering are easy to understand and interpret.
+* High computational efficiency
+* Results are straightforward to interpret
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Gaussian Mixture Models (GMM)
-Gaussian Mixture Models (GMM) are a probabilistic model that assumes data is generated from a mixture of several Gaussian distributions with unknown parameters, each with its own mean and variance. It assumes normally distributed subpopulations within an overall population. GMMs are widely used for clustering and density estimation, as they provide a method for representing complex distributions through the combination of simpler ones.
+Gaussian Mixture Models (GMM) represent data as a mixture of multiple Gaussian distributions, each characterised by its own mean and variance. This probabilistic framework assumes that the overall dataset consists of several normally distributed subpopulations.
+
+GMMs are widely used for clustering and density estimation, as they can approximate complex distributions through combinations of simpler Gaussian components.
 
 <br/>
 
 **Gaussian Mixture Models are particularly powerful in scenarios where:**
 
-* Soft clustering is needed: Unlike K-means, GMM provides the probability of each data point belonging to each cluster, offering a soft classification and understanding of the uncertainties in our data.
-* Flexibility in cluster covariance: GMM allows for clusters to have different sizes and different shapes, making it more flexible to capture the true variance in the data.
+* Soft clustering is required: Each data point is assigned a probability of belonging to each cluster rather than a single label.
+* Flexible cluster shapes are needed: GMM allows clusters to vary in size, shape, and orientation through different covariance structures.
 
 <br/>
 
 **Key Components of GMM:**
 
-* Number of Components (Gaussians): Similar to K in K-means, the number of Gaussians (components) is a parameter that needs to be set.
-* Expectation-Maximization (EM) Algorithm: GMMs use the EM algorithm for fitting, iteratively improving the likelihood of the data given the model.
-* Covariance Type: The shape, size, and orientation of the clusters are determined by the covariance type of the Gaussians (e.g., spherical, diagonal, tied, or full covariance).
+* Number of Components (Gaussians): The number of distributions must be specified.
+* Expectation-Maximization (EM) Algorithm: Used to iteratively estimate model parameters.
+* Covariance Type: Defines the geometry of clusters (e.g., spherical, diagonal, tied, full).
 
 <br/>
 
 **The Expectation-Maximization (EM) algorithm is a two-step process:**
 
-* Expectation Step (E-step): Calculate the probability that each data point belongs to each cluster.
-* Maximization Step (M-step): Update the parameters of the Gaussians (mean, covariance, and mixing coefficient) to maximize the likelihood of the data given these assignments.
-This process is repeated until convergence, meaning the parameters do not significantly change from one iteration to the next.
+* Expectation Step (E-step): Estimate the probability that each data point belongs to each component.
+* Maximization Step (M-step): Update the parameters (means, covariances, and mixing coefficients) to maximise likelihood.
+
+This process repeats until parameter updates become minimal.
 
 <br/>
 
 **Advantages of GMM:**
 
-* Soft Clustering: Provides a probabilistic framework for soft clustering, giving more information about the uncertainties in the data assignments.
-* Cluster Shape Flexibility: Can adapt to ellipsoidal cluster shapes, thanks to the flexible covariance structure.
+* Provides probabilistic (soft) clustering
+* Adapts to non-spherical cluster shapes
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### AWI Alignment
 
-Radar altimetry is sensitive to orbital tracker inaccuracies and Mean Sea Surface (MSS) variations. To extract meaningful features and increase reliability, we implement a sub-pixel waveform alignment, with the methodology produced by the Alfred Wegener Institute (AWI).
+Radar altimetry measurements are sensitive to orbital tracking errors and variations in Mean Sea Surface (MSS). To improve feature extraction and reliability, a sub-pixel waveform alignment approach based on the Alfred Wegener Institute (AWI) methodology is applied.
 
-Using FFT (Fast Fourier Transform) Oversampling, we realign the echoes to a common reference. This process reduces noise in the Peakiness and SSD calculations, significantly increasing the separation between the 'ice' and 'lead' clusters in the feature space.
+Using FFT (Fast Fourier Transform) oversampling, waveforms are aligned to a common reference. This reduces noise in Peakiness and SSD metrics and improves separation between ice and lead clusters in feature space.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 # Getting Started
 
-This project is designed to be run in Google Colab, which is a free cloud-based platform for writing, running, and sharing Python code collaboratively. This platform allows access to RAM and computing power needed to process large NetCDF and Raster (satellite) data. Google Colab integrates well with Google Drive. However, it is also possible to run this code in a local environment, bearing in mind that you must map your local paths, rather than Google Drive paths, to access the Copernicus Sentinel files. To access the notebook, click the Google Colab link in the ipynb file included in this repository.
+This project is designed to run in Google Colab, a cloud-based platform for writing and executing Python code. Colab provides access to the computational resources required to process large NetCDF and raster satellite datasets and integrates easily with Google Drive.
+
+It is also possible to run the code locally. In this case, file paths must be adapted from Google Drive references to local directories to access Copernicus Sentinel data. The notebook can be accessed via the Google Colab link in the `.ipynb` file included in the repository.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Prerequisites & Installation
 
-Code for the installation of packages & libraries is also included in the .ipynb document.
+Code for installing required packages is included in the notebook.
 
 **Necessary Packages for this Project:**
    
 ```sh
 !pip install rasterio
 !pip install netCDF4
-```
-<br/>
-
-**Python & Machine Learning Libraries:**
-
-```sh
 import rasterio
 import numpy as np
 import matplotlib.pyplot as plt
@@ -378,40 +190,36 @@ from sklearn.mixture import GaussianMixture
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay, classification_report
 from numpy import asarray as ar, exp
-````
+```
 
 <br/>
 
-The Optical (Sentinel-2) and Altimetry (Sentinel-3) data were accessed using the [Copernicus Data Store](https://cds.climate.copernicus.eu/). To access these data, you must set up a login for the Copernicus data store, and use this when required in your code.
+The Optical (Sentinel-2) and Altimetry (Sentinel-3) data were accessed using the Copernicus Data Store
+. Access requires creating an account and authenticating within your code.
 
-Before completing the notebook provided in this repository, please extract and colocate the Sentinel-3 and Sentinel-2 data following the steps provided in [Colocating Sentinel Data](https://cpomucl.github.io/GEOL0069-AI4EO/Chapter1_Data_Colocating_S2_S3_3.html).
+Before completing the notebook, ensure Sentinel-2 and Sentinel-3 data are extracted and colocated following the steps provided here: Colocating Sentinel Data
+.
 
-**Names of the Sentinel 2 and Sentinel-3 data folders used within this project:**
+Names of the Sentinel 2 and Sentinel-3 data folders used within this project:
 
-* Sentinel-2 (MSI) data : S2A_MSIL1C_20190301T235611_N0207_R116_T01WCU_20190302T014622.SAFE
+Sentinel-2 (MSI) data : S2A_MSIL1C_20190301T235611_N0207_R116_T01WCU_20190302T014622.SAFE
+Sentinel-3 (SRAL) data : S3B_SR_2_LAN_SI_20190301T231304_20190301T233006_20230405T162425_1021_022_301______LN3_R_NT_005.SEN3
+<p align="right">(<a href="#readme-top">back to top</a>)</p> <!-- CONTACT -->
+Contact
 
-* Sentinel-3 (SRAL) data : S3B_SR_2_LAN_SI_20190301T231304_20190301T233006_20230405T162425_1021_022_301______LN3_R_NT_005.SEN3
+Benjamin Guillaud-Leblanc - LinkedIn
+ - ben.guillaud-leblanc.22@ucl.ac.uk
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+Project Link: https://github.com/ben-g26/Unsupervised-Learning-Methods
 
-<!-- CONTACT -->
-# Contact
-Benjamin Guillaud-Leblanc - [LinkedIn](https://www.linkedin.com/in/benjamin-guillaud-leblanc-b168b723a/) - ben.guillaud-leblanc.22@ucl.ac.uk
-
-Project Link: [https://github.com/ben-g26/Unsupervised-Learning-Methods](https://github.com/ben-g26/Unsupervised-Learning-Methods)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- ACKNOWLEDGMENTS -->
-# Acknowledgments
-
-* This project makes up my Week 4 assignment for GEOL0069 Artificial Intelligence for Earth Observation (25/26) at University College London.
-* Thank you to [Prof. Michel Tsamados](https://profiles.ucl.ac.uk/11855-michel-tsamados) and [Weibin Chen](https://www.ucl.ac.uk/mathematical-physical-sciences/weibin-chen) for producing the initial Jupyter Notebook for this project and their guidance in AI for Earth Observation.
-* Thank you to [ESA/Copernicus](https://cds.climate.copernicus.eu/) for the availability of Sentinel-2 and Sentinel-3 data.
-* Thank you to [AWI (Alfred Wegner Institute)](https://www.awi.de/en/) for the methodology regarding radar re-tracking.
-
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
+<p align="right">(<a href="#readme-top">back to top</a>)</p> <!-- ACKNOWLEDGMENTS -->
+Acknowledgments
+This project forms the Week 4 assignment for GEOL0069 Artificial Intelligence for Earth Observation (2025/26) at University College London.
+Thank you to Prof. Michel Tsamados
+ and Weibin Chen
+ for providing the original Jupyter Notebook and guidance.
+Thank you to ESA/Copernicus
+ for access to Sentinel-2 and Sentinel-3 datasets.
+Thank you to AWI (Alfred Wegner Institute)
+ for the radar re-tracking methodology.
+<p align="right">(<a href="#readme-top">back to top</a>)</p> ```
