@@ -209,7 +209,7 @@ Before completing the notebook provided in this repository, please extract and c
 
 <!-- CONTACT -->
 # Contact
-Emily Grace Adams - [LinkedIn](https://www.linkedin.com/in/emily-grace-adams/) - emily.adams.25@ucl.ac.uk
+Benjamin Guillaud-Leblanc - [LinkedIn](https://www.linkedin.com/in/benjamin-guillaud-leblanc/) - ben.guillaud-leblanc.22@ucl.ac.uk
 
 Project Link: [https://github.com/eemeleems/GEOL0069_W4_unsupervised](https://github.com/eemeleems/GEOL0069_W4_unsupervised)
 
