@@ -3,8 +3,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/eemeleems/GEOL0069_W4_unsupervised">
-    <img src="K-Means&GMM_logo.png" alt="Logo" width="558" height="435">
+  <a href="https://github.com/ben-g26/Unsupervised-Learning-Methods">
+    <img src="logo.png" alt="Logo" width="558" height="435">
   </a>
 
 <h3 align="center">Sea Ice and Lead Unsupervised Classification</h3>
